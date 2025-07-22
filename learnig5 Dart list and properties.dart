@@ -14,4 +14,48 @@ void main () {
   print(fruits.first); // .first shows first item in list
 
   print(fruits.last); // .last shows last item in list
+
+  fruits.insert(1, 'Jackfruit'); // adds jackfruit at position 1
+
+  print(fruits);
+
+  fruits.insertAll(2, ['Coconut', 'Lichi']); // adds this new list at position at 2
+
+  print(fruits);
+
+  fruits.removeAt(2); // removes item at index 2
+
+  print(fruits);
+
+  fruits.remove('Jackfruit'); // removes the item jackfruit from the list
+
+  print(fruits);
+
+  fruits[1] = 'Jackfruit'; // updates the list
+
+  print(fruits);
+
+  List<int> fixedList = List<int>.filled(3, 0);
+  // .filled() limits list range and tells it to replace the empty places with 0
+
+  /// Updating the fixed list with [1, 2] and empty place will be 0
+  int j = 1;
+
+  for(int i = 0; i < 2; i++){
+
+    fixedList[i] = j;
+    j++;
+
+  }
+
+  print(fixedList);
+
+  List<int> growableList = []; // no fixed range
+
+  growableList.add(4); // adds 4
+
+  growableList.add(6); // adds 6
+
+  print(growableList);
+
 }
