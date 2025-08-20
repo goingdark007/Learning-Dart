@@ -70,4 +70,12 @@ void main () {
 
   print(newList.runtimeType); // runtimeType() shows the type of elements that list takes
 
+  newList.sort(); /// sorts the element in ascending order
+
+  print(newList);
+
+  newList = newList.reversed.toList(); /// sorts the element in descending order
+
+  print(newList);
+
 }
