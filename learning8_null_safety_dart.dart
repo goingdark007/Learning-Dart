@@ -32,9 +32,9 @@ void main () {
   int sureAge = age!; // ✅ Safe here because age is not null, ! tells dart I know this value is not null,
   //if you’re wrong, it will crash at runtime
 
-  /// late keyword
   print(sureAge);
 
+  /// late keyword
   token = "abc123";  // Must assign before use
 
   print(token);      // ✅ Works fine

@@ -12,7 +12,6 @@ main(){ // main body of the code that runs
 
   double ? number2 = double.tryParse(stdin.readLineSync()!);
 
-
   print('sum : ${(number1!  + number2!)}'); // null assertion ! tells dart rest assure values will not be null
   // basically converts nullable to non null, only one line needs to be specified other lines automatically understood
 
