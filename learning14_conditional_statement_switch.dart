@@ -21,6 +21,7 @@ void main () {
       print('Gym');
     case 'monday':
       print('Movie');
+    // runs this if no case is matched
     default:
       print('Stay in home');
   }
@@ -43,6 +44,8 @@ void main () {
       print('Winter');
     case 2 || 3 || 4:
       print('Spring');
+    default:
+    print('Invalid input');
   }
 
 
