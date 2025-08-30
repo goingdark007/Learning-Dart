@@ -2,7 +2,7 @@ void main () {
 
 
   /// for loop in dart. starts from 1 and iterates to 5
-  // for( initialization; condition; incrementation / decrementation
+  // for( initialization; condition; incrementation / decrementation)
   for(int i = 1; i <= 5; i++){
     print('Hello $i');
   }
@@ -48,7 +48,7 @@ void main () {
 
   /// Using loop in list of maps
   var orderList = [
-    {'name' : 'Karim', 'amount' : 500, 'address' : 'Taufiq'},
+    {'name' : 'Karim', 'amount' : 500, 'address' : 'Dhaka'},
     {'name' : 'Sohel', 'amount' : 800, 'address' : 'Mirpur'},
     {'name' : 'Piyas', 'amount' : 750, 'address' : 'Mirpur'},
     {'name' : 'Jojo', 'amount' : 400, 'address' : 'Mirpur'},

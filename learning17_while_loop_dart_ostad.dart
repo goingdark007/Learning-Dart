@@ -2,7 +2,6 @@ void main () {
 
 
   /// While loop
-  ///
   // initialization
   int i = 5;
 
