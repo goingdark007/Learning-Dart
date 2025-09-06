@@ -27,7 +27,7 @@ void main () {
   print(student1);
 
 
-  /// Accessing the variables of the class using the object
+  /// Accessing the variables of the class using the dot after object
   student1.studentName = 'John Doe';
   student1.age = 20;
   student1.address = 'Dhaka';
