@@ -1,12 +1,14 @@
 /// Demonstration of polymorphism
+// it works with inheritance and interfaces
 abstract class PaymentGateway {
   void cashIn(double amount);
   void cashOut(double amount);
 }
 
 
-/// Implementing the interface class using 'implements' keyword
-class Bkash implements PaymentGateway {
+/// Inheritance: Child class inherits properties/ variables and methods from the parent class
+// extends keyword is used to inherit from a class
+class Bkash extends PaymentGateway {
 
   // overriding the abstract methods with our own implementation
   // using @override annotation
@@ -21,7 +23,7 @@ class Bkash implements PaymentGateway {
   }
 }
 
-class Nagad implements PaymentGateway {
+class Nagad extends PaymentGateway {
   @override
   void cashIn(double amount) {
     print("Nagad: Cash out charge 10 taka per 1000 taka");

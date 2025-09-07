@@ -1,4 +1,5 @@
 /// Interface class example
+// An interface is just a contract it says any class that implements me must define these methods.
 abstract class PaymentGateway {
 
   // abstract methods or functions
