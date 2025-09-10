@@ -12,6 +12,8 @@ void main () {
 
   print(name?.length); // ✅ Safe. Prints "null" instead of throwing an error,
   // when we don’t know if an object is null or not, use ?. to safely access its members
+  // ?. is the null-aware operator (null safety feature).
+  // It says if the thing before me is NOT null, go ahead and do what’s after me. Otherwise, just return null and skip it.
 
   /// Null-coalescing
   String? name2;
