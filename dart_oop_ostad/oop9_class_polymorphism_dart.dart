@@ -1,5 +1,9 @@
 /// Demonstration of polymorphism
 // it works with inheritance and interfaces
+// It is like a socket or plug for different classes.
+// Like a charging plug where different types of charger
+// (Mobile charger, laptop charger) can be plugged in depending
+// on the user choice. We don’t change the socket; we just plug in different chargers
 abstract class PaymentGateway {
   void cashIn(double amount);
   void cashOut(double amount);
@@ -41,7 +45,7 @@ void main() {
 
   // Polymorphism allows our gateway variable to point to different
   // objects (Bkash, Nagad), and the correct overridden method is executed at
-  // runtime depending on the object type. Polymorphism lets us declare a interface
+  // runtime depending on the object type. Polymorphism lets us declare an interface
   // variable first then decide the actual object type later.
   // polymorphism is like same method call: .cashIn(amount);
   // But different behaviors depending on the object (Bkash or Nagad)
