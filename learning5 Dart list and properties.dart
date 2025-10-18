@@ -28,7 +28,7 @@ void main () {
   print(fruits);
 
   fruits.remove('Jackfruit'); // removes the item jackfruit from the list
-
+  // there is also .removeLast() and .removeFirst() to remove last and first item
   print(fruits);
 
   fruits[1] = 'Jackfruit'; // updates the list
