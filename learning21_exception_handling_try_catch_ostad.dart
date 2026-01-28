@@ -30,5 +30,29 @@ void main () {
     print('Error : $error');
   }
 
+  /// We can use .then() and .catchError as alternatives
+  myFunction().then((value) {
+
+    if(value == 'Haha') {
+      print('laughing');
+    } else {
+      throw Exception('Some arbitrary error');
+    }
+    }).catchError((e) {
+      print('Error: $e');
+  });
+
+
+}
+
+Future<String> myFunction () async {
+
+  print('Starting');
+
+  await Future.delayed(Duration(seconds: 5));
+
+  print('Ending');
+
+  return 'Hahaha';
 
 }
