@@ -6,6 +6,8 @@ void main () {
 
   print(numbers.length); // .length shows the length of the list
 
+  print(numbers.isEmpty); // .isEmpty checks the list is empty or not returns true or false
+
   print(numbers.isNotEmpty);
   // .isNotEmpty checks the list is empty or not returns true or false
 
@@ -75,6 +77,17 @@ void main () {
   print(newList);
 
   newList = newList.reversed.toList(); /// sorts the element in descending order
+
+  print(newList);
+
+  /// .clear() removes all objects from this list; the length of the list becomes zero.
+  /// The list must be growable.
+  /// final numbers = <int>[1, 2, 3];
+  /// numbers.clear();
+  /// print(numbers.length); // 0
+  /// print(numbers); // []
+
+  newList.clear();
 
   print(newList);
 
