@@ -56,4 +56,29 @@ void main () {
 
   print('Values ${student.values}'); // .values returns values as tuple
 
+  /// .putIfAbsent() Map method
+  // If key doesn't exists adds the key and value, also returns it
+  // If key exists does not overwrite and returns existing value
+  Map<String, int> counter = {};
+  int val = counter.putIfAbsent('x', () => 42);
+  print(val);     // 42
+  print(counter); // {x: 42}
+  int val2 = counter.putIfAbsent('x', () => 99);
+  print(val2); // 42
+
+
+  // Most common use case grouping
+  List<String> words = ['apple', 'ant', 'bat', 'banana', 'avocado'];
+
+  Map<String, List<String>> grouped = {};
+
+  for (var word in words) {
+    grouped.putIfAbsent(word[0], () => []).add(word);
+    //                              ↑ creates empty list if key missing
+    //                                        ↑ then adds word to that list
+  }
+
+  print(grouped);
+// {a: [apple, ant, avocado], b: [bat, banana]}
+
 }
