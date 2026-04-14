@@ -91,4 +91,10 @@ void main () {
 
   print(newList);
 
+  /// List.filled() creates a list with three 0s
+  List myList = List.filled(3, 0);
+
+  print(myList); // [0, 0, 0]
+
+
 }
