@@ -49,6 +49,15 @@ void main () {
   String spaced = "   Hello Dart!   ";
   print(spaced.trim()); // "Hello Dart!"
 
+  // .trimLeft() method removes the whitespaces of the left side
+  spaced.trimLeft();
+  print(spaced); // "Hello Dart!   "
+
+  // .trimRight() method removes the whitespaces of the right side
+  spaced.trimRight();
+  print(spaced); // "   Hello Dart!"
+
+
   /// Checking if a string contains a substring using contains()
   String phrase = "Learning Dart is fun";
   print(phrase.contains("Dart")); // true
