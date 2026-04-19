@@ -1,6 +1,7 @@
 abstract class Shape {
 
   /// Abstract method
+  // ignore: unused_element
   void _area();
 
 }

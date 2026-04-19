@@ -30,6 +30,7 @@ void main () {
 
   print('x and y ${x && y}');
 
+  // ignore: dead_code
   print('x or y ${x || y}');
 
   print('not x ${ !x }');

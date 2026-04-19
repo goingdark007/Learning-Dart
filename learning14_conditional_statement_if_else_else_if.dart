@@ -18,6 +18,7 @@ void main () {
   // if runs the code if the condition is true
   if (isMember) {
     print('10% Discount');
+  // ignore: dead_code
   } else {
     print('No Discount');
   }

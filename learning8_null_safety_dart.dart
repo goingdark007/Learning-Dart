@@ -10,6 +10,7 @@ void main () {
   /// Null-aware Access
   String? name;
 
+  // ignore: dead_code
   print(name?.length); // ✅ Safe. Prints "null" instead of throwing an error,
   // when we don’t know if an object is null or not, use ?. to safely access its members
   // ?. is the null-aware operator (null safety feature).
@@ -31,6 +32,7 @@ void main () {
   /// Null Assertion
   int? age = 20;
 
+  // ignore: unnecessary_non_null_assertion
   int sureAge = age!; // ✅ Safe here because age is not null, ! tells dart I know this value is not null,
   //if you’re wrong, it will crash at runtime
 
