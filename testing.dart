@@ -79,6 +79,7 @@ void main () {
   // print('Popped item: $poppedItem');
   // print('Top item: ${stack.peek()}');
 
+  // ignore: unused_element
   bool checkBalance(String expr){
     Stack<String> stack = Stack();
     for(var ch in expr.split('')){
