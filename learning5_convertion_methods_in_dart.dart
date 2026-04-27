@@ -1,4 +1,5 @@
 void main() {
+  
   /// 1. String to Numbers (int, double)
   /// .parse() throws FormatException on failure. 
   /// .tryParse() is safer as it returns null instead of crashing.
@@ -39,15 +40,24 @@ void main() {
   bool isTrue = bool.parse('true');
   print('String to Bool: $isTrue');
 
-  /// 7. Collection Conversions (toList, toSet)
+  /// 7. Collection Conversions (toList, toSet, List.from)
   /// .toList() converts iterables (Sets, Map keys) to a List.
+  /// List.from() creates a new list from an iterable.
   /// .toSet() converts a List to a Set (auto-removes duplicates).
   Set set1 = {1, 2, 3};
-  List list2 = set1.toList();
+  List list2 = set1.toList(); // Convert Set to List using toList()
+  List list3 = List.from(set1); // Convert Set to List using List.from()
+  print('Set to List: toList: $list2, List.from: $list3');
+
+  // Converting Iterables (like from .map()) to List
+  Set set2 = {23, 45, 61};
+  List list4 = set2.map((e) => e + 1).toList(); // Iterable to List using toList()
+  List list5 = List.from(set2.map((e) => e + 1)); // Iterable to List using List.from()
+  print('Iterable to List: toList: $list4, List.from: $list5');
   
   List list6 = [1, 2, 2, 3];
   Set set3 = list6.toSet(); // Result: {1, 2, 3}
-  print('Collections: List $list2, Set $set3');
+  print('List to Set: $set3');
 
   /// 8. String splitting & joining
   /// .split() turns String -> List. .join() turns List -> String.
