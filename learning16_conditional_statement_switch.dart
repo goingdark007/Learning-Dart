@@ -48,5 +48,38 @@ void main () {
     print('Invalid input');
   }
 
+  /// Replacing Switch With Map
+  // If we don't need extra logic or operations before returning in case: we
+  // can use a const Map with null safety ?? fallback instead. It increases code
+  // stability and readability
+  String type = 'tea';
+
+  getCaffeine(type) {
+    switch (type) {
+      case 'coffee':
+        return 'Here is your coffee!';
+      case 'tea':
+        return 'Here is your tea!';
+      case 'energy drink':
+        return 'Here is your energy drink!';
+      default:
+        return 'Unknown beverage type.';
+    }
+
+  }
+
+  print(getCaffeine(type));
+
+  getCaffeine2(type) {
+    const caffeine = {
+      'coffee': 'Here is your coffee',
+      'tea': 'Here is your tea',
+      'soda': 'Here is your soda',
+      'energy drink': 'Here is your energy drink',
+    };
+    return caffeine[type.toLowerCase()] ?? 'Caffeine content not found';
+  }
+
+  print(getCaffeine2(type));
 
 }
