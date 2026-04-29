@@ -13,9 +13,9 @@ void main () {
 
   print(numbers[0]); // shows the item at index 0
 
-  print(fruits.first); // .first shows first item in list
+  print(fruits.first); /// .first shows first item in list
 
-  print(fruits.last); // .last shows last item in list
+  print(fruits.last); /// .last shows last item in list
 
   fruits.insert(1, 'Jackfruit'); // adds jackfruit at position 1
 
