@@ -88,4 +88,26 @@ void main () {
   print(person3.runtimeType);
 
 
+  /// .map((e) => ) method which is an alternative of loop and used for list
+  // of maps. It returns a list of Iterables<T>
+  List<Map<String, dynamic>> myList = [
+    {
+      'id' : 01,
+      'name': 'Nazmul'
+    },
+    {
+      'id': 02,
+      'name' : 'Alex'
+    },
+    {
+      'id': 03,
+      'name' : 'Max'
+    }
+  ];
+
+  // use .toList() method to convert iterables to list
+  var myList2 = myList.map((e)=> e['id']).toList();
+  print(myList2);
+
+
 }
