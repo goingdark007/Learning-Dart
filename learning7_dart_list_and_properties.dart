@@ -37,22 +37,8 @@ void main () {
 
   print(fruits);
 
-  List<int> fixedList = List<int>.filled(3, 0);
-  // .filled() limits list range and tells it to replace the empty places with 0
-
-  /// Updating the fixed list with [1, 2] and empty place will be 0
-  int j = 1;
-
-  for(int i = 0; i < 2; i++){
-
-    fixedList[i] = j;
-    j++;
-
-  }
-
-  print(fixedList);
-
-  List<int> growableList = []; // no fixed range
+  /// no fixed range, by Default its growable
+  List<int> growableList = [];
 
   growableList.add(4); // adds 4
 
@@ -91,10 +77,51 @@ void main () {
 
   print(newList);
 
-  /// List.filled() creates a list with three 0s
+  /// List.filled() limits list range and tells it to replace the empty places with 0
+  // and creates a not growable list, like adding and removing element using
+  // .add() and .remove() will cause error
+  List<int> fixedList = List<int>.filled(3, 0); // [0, 0, 0]
+
+
+  // Updating the fixed list with [1, 2] and empty place will be 0
+  int j = 1;
+
+  for(int i = 0; i < 2; i++){
+
+    fixedList[i] = j;
+    j++;
+
+  }
+
+  print(fixedList);
+
+  /// Part-2, List.filled() also creates a list with three 0s
   List myList = List.filled(3, 0);
 
   print(myList); // [0, 0, 0]
+
+  /// Nested List.filled problem
+  // List.filled() copies the same reference of the inner list into every row so
+  // all three rows point to hte same list object in memory
+  var matrix = List.filled(3, List.filled(3, 0));
+
+  // if we modify the second index or element of the list then all lists second
+  // element changes too !!
+  matrix[0][1] = 99;
+
+  print(matrix); // [[0, 99, 0], [0, 99, 0], [0, 99, 0]]
+
+  // we can fix this with List.generate() method calls the lambda fresh each
+  // time, where each row is a brand-new List.filled() object in memory.
+
+  var matrix2 = List.generate(
+    3, (_) => List.filled(3, 0), // NEW list created for each row
+  );
+  matrix2[0][1] = 99;
+  print(matrix2); // [[0, 99, 0], [0, 0, 0], [0, 0, 0]]  ← Only row 0 changed
+
+
+  ///
 
 
 }
