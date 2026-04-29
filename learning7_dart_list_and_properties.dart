@@ -121,7 +121,25 @@ void main () {
   print(matrix2); // [[0, 99, 0], [0, 0, 0], [0, 0, 0]]  ← Only row 0 changed
 
 
-  ///
+  /// List copying not referring to the same memory address using [...list]
+  // spread operator
+  List<int> myList2 = [1, 3, 5];
+  var myList3 = [...myList2];
+  print(myList3);
+  myList2.addAll([5,8]);
+  print(myList3);
+
+  /// Same list copying but using List.of()
+  // List.of() method in Dart creates a new, growable list and initializes it
+  // with the elements from a provided Iterable. It does not point to the original
+  // Iterable/list in memory but only adds to the new list
+  var originalList = ['a', 'b', 'c'];
+  var copiedList = List.of(originalList);
+
+  copiedList.add('d');
+
+  print(originalList); // ['a', 'b', 'c']
+  print(copiedList);   // ['a', 'b', 'c', 'd']
 
 
 }
