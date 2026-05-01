@@ -1,8 +1,29 @@
 void main () {
 
-  List<int> list4 = [1, 3, 4, 5];
+  generateSubsets([1, 2, 3]);
+}
 
-  final total = list4.fold<int>(0, (previousValue, element ) => previousValue + element);
-  print(total);
+/// Backtracking
+void generateSubsets(List<int> num){
 
+  List<int> res = [];
+
+  final myList = [];
+
+  void backtrack (int index){
+
+    print(List.from(res));
+
+    myList.add(List.from(res));
+
+    for(int i = index; i < num.length; i++ ){
+      res.add(num[i]);
+      backtrack(i+1);
+      res.removeLast();
+    }
+
+  }
+  backtrack(0);
+
+  print(myList);
 }
