@@ -41,4 +41,12 @@ void main() {
   var myList2 = myList.map((e)=> e['id']).toList();
   print(myList2);
 
+
+  /// .fold() method for accumulation a collection or lists values
+  // It has takes two arguments, initialValue and a callback method
+  List<int> list4 = [1, 3, 4, 5];
+
+  final total = list4.fold<int>(0, (previousValue, element ) => previousValue + element);
+  print(total); // 13
+
 }
