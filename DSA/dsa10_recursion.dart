@@ -2,7 +2,7 @@ void main () {
 
   // do some operation
 
-  int f = fibonacci(6);
+  int f = fibonacci(6); // // n th position starts from O index which is first or 1
   print(f);
   // operation
 
@@ -29,8 +29,10 @@ int fact(int n){
 /// Using recursion
 int factorial(int n){
 
+  // base case
   if(n <= 1) return 1;
 
+  // recursive case
   return n * factorial(n-1);
 
 }
