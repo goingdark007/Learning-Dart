@@ -12,4 +12,12 @@ void main () {
   // ignore: unused_local_variable
   const pi = 3.1416; /// initialized at compile time
 
+  /// is keyword to type of the variable
+  // if matched then returns true if not then false
+  var num = 12;
+  double decimal = 1.2;
+  // ignore: unnecessary_type_check
+  print(num is int); // true
+  print(decimal is String); // false
+
 }
