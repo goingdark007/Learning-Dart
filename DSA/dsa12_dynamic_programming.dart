@@ -1,9 +1,13 @@
+import 'dart:math';
+
 void main() {
 
-  // print(fib(9));
-  // print(fibonacci(9));
+  print(fib(9));
+  print(fibonacci(9));
 
   print(climbStairs(4));
+
+  print(rob([5, 10, 3, 1, 9]));
 
 }
 
@@ -73,5 +77,36 @@ int climbStairs(int n){
   }
 
   return dp[n];
+
+}
+
+/// House robber problem
+// Like there are 5 house like:
+// |5| |10 |3| |1| |9|
+// Each has its own value of money
+// The robber wants to take the maximum amount of money but he can't rob the
+// houses which are next to each other like if he robs |3| he can't rob |10|
+// Here the maximum number of money the robber can rob based on each house he
+// chooses to rob
+//  5   10  10   11  19
+// |5| |10| |3| |1| |9|
+int rob(List<int> moneys){
+
+  int n = moneys.length;
+
+  if(n == 0) return 0;
+  if(n == 1) return moneys[0];
+
+
+  List<int> dp = List.filled(n, 0);
+
+  dp[0] = moneys[0];
+  dp[1] = max(dp[0], dp[1]);
+
+  for(int i = 2; i < n; i++){
+    dp[i] = max(dp[i-1], moneys[i] + dp[i-2]);
+  }
+
+  return dp[n - 1];
 
 }
