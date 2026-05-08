@@ -1,7 +1,9 @@
 void main() {
 
-  print(fib(9));
-  print(fibonacci(9));
+  // print(fib(9));
+  // print(fibonacci(9));
+
+  print(climbStairs(4));
 
 }
 
@@ -48,3 +50,28 @@ int fibonacci(int n){
 // dp[3] = dp[3-1] + dp[3-2] = 2 + 1 = 3,
 // dp[4] = dp[4-1] + dp[4-2] = 3 + 2 = 5,
 // dp[5] = dp[5-1] + dp[5-2] = ...
+
+
+/// Climb Stairs problem, either one step or two steps
+// like 1,2,3,4 is the stair numbers
+// to go to the 4th number there are three ways:
+// 1,2,3,4
+// 1,3,4
+// 1,2,4
+// This method calculates the number of ways to go to a specific stair number
+int climbStairs(int n){
+
+  if(n<= 2) return n;
+
+  List<int> dp = List.filled(n + 1, 0);
+
+  dp[1] = 1;
+  dp[2] = 2;
+
+  for(int i = 2; i <= n; i++ ){
+    dp[i] = dp[i-1] + dp[i-2];
+  }
+
+  return dp[n];
+
+}
