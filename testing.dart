@@ -1,29 +1,29 @@
-void main () {
+import 'dart:math';
 
-  generateSubsets([1, 2, 3]);
+void main() {
+
+  print(rob([5, 10, 3, 1, 9]));
+
+
 }
 
-/// Backtracking
-void generateSubsets(List<int> num){
+int rob(List<int> moneys){
 
-  List<int> res = [];
+  int n = moneys.length;
 
-  final myList = [];
+  if(n == 0) return 0;
+  if(n == 1) return moneys[0];
 
-  void backtrack (int index){
 
-    print(List.from(res));
+  List<int> dp = List.filled(n, 0);
 
-    myList.add(List.from(res));
+  dp[0] = moneys[0];
+  dp[1] = max(dp[0], dp[1]);
 
-    for(int i = index; i < num.length; i++ ){
-      res.add(num[i]);
-      backtrack(i+1);
-      res.removeLast();
-    }
-
+  for(int i = 2; i < n; i++){
+    dp[i] = max(dp[i-1], moneys[i] + dp[i-2]);
   }
-  backtrack(0);
 
-  print(myList);
+  return dp[n - 1];
+
 }
