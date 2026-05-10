@@ -4,40 +4,62 @@ void main () {
 
   List<String> fruits = ['mango', 'apple', 'banana'];
 
-  print(numbers.length); // .length shows the length of the list
 
-  print(numbers.isEmpty); // .isEmpty checks the list is empty or not returns true or false
+  /// .length shows the length of the list
+  print(numbers.length);
 
+
+  /// .isEmpty checks the list is empty or not returns true or false
+  print(numbers.isEmpty);
+
+
+  /// .isNotEmpty checks the list is empty or not returns true or false
   print(numbers.isNotEmpty);
-  // .isNotEmpty checks the list is empty or not returns true or false
 
-  print(numbers[0]); // shows the item at index 0
 
-  print(fruits.first); /// .first shows first item in list
+  /// shows the item at index 0
+  print(numbers[0]);
 
-  print(fruits.last); /// .last shows last item in list
 
-  fruits.insert(1, 'Jackfruit'); // adds jackfruit at position 1
+  /// .first shows first item in list
+  print(fruits.first);
+
+
+  /// .last shows last item in list
+  print(fruits.last);
+
+
+  /// .insert() adds jackfruit at position 1
+  fruits.insert(1, 'Jackfruit');
 
   print(fruits);
 
-  fruits.insertAll(2, ['Coconut', 'Lichi']); // adds this new list at position at 2
+
+  /// .insertAll() adds this new list at position at 2
+  fruits.insertAll(2, ['Coconut', 'Lichi']);
 
   print(fruits);
 
-  fruits.removeAt(2); // removes item at index 2
+
+  /// .removeAt() removes item at index 2
+  fruits.removeAt(2);
 
   print(fruits);
 
-  fruits.remove('Jackfruit'); // removes the item jackfruit from the list
+
+  /// .remove() removes the item jackfruit from the list
   // there is also .removeLast() and .removeFirst() to remove last and first item
+  fruits.remove('Jackfruit');
   print(fruits);
 
-  fruits[1] = 'Jackfruit'; // updates the list
+
+  /// updates the list
+  fruits[1] = 'Jackfruit';
 
   print(fruits);
 
-  /// no fixed range, by Default its growable
+
+  /// Growable List no fixed range, by Default its growable
   List<int> growableList = [];
 
   growableList.add(4); // adds 4
@@ -50,21 +72,27 @@ void main () {
 
   print(growableList);
 
+
+  /// Run time type
   List<int> newList = [25,36];
 
-  newList.insertAll(1, [14,16]); // .insertAll() adds a list at a specified index, the existing element is moved to next index
+  // .runtimeType shows the type of elements that list takes
+  print(newList.runtimeType);
+
+
+  /// .sort() sorts the element in ascending order
+  newList.sort();
 
   print(newList);
 
-  print(newList.runtimeType); // runtimeType() shows the type of elements that list takes
 
-  newList.sort(); /// sorts the element in ascending order
-
-  print(newList);
-
-  newList = newList.reversed.toList(); /// sorts the element in descending order
+  /// .reversed sorts the element in descending order
+  // And returns a list of Iterable<T> which is then converted to List using
+  // .toList()
+  newList = newList.reversed.toList();
 
   print(newList);
+
 
   /// .clear() removes all objects from this list; the length of the list becomes zero.
   /// The list must be growable.
@@ -76,6 +104,7 @@ void main () {
   newList.clear();
 
   print(newList);
+
 
   /// List.filled() limits list range and tells it to replace the empty places with 0
   // and creates a not growable list, like adding and removing element using
@@ -95,10 +124,12 @@ void main () {
 
   print(fixedList);
 
+
   /// Part-2, List.filled() also creates a list with three 0s
   List myList = List.filled(3, 0);
 
   print(myList); // [0, 0, 0]
+
 
   /// Nested List.filled problem
   // List.filled() copies the same reference of the inner list into every row so
@@ -129,6 +160,7 @@ void main () {
   myList2.addAll([5,8]);
   print(myList3);
 
+
   /// Same list copying but using List.of()
   // List.of() method in Dart creates a new, growable list and initializes it
   // with the elements from a provided Iterable. It does not point to the original
@@ -140,6 +172,37 @@ void main () {
 
   print(originalList); // ['a', 'b', 'c']
   print(copiedList);   // ['a', 'b', 'c', 'd']
+
+
+  /// .skip(n) method ignores the first n (like 4) elements and returns
+  /// everything after them as an Iterable<T>.
+  // We convert it back to List using .toList() method
+  // If n (100) is greater than or equal to the list length,
+  // we get an empty list []
+  final numbers1 = [1, 2, 3, 5, 6, 7];
+  final result = numbers1.skip(4).toList(); // [6, 7]
+  final result2 = numbers.skip(100).toList(); // []
+  print(result);
+  print(result2);
+
+
+  /// .take(n) method picks only the first n (like 4) elements and returns them
+  /// as an Iterable<T>
+  // We convert it back to List using .toList() method
+  // If n (100) is greater than or equal to the list length,
+  // the entire list is returned
+  final numbers2 = [1, 2, 3, 4, 5, 6, 7];
+  final result3 = numbers2.take(4).toList(); // [1, 2, 3, 4]
+  final result4 = numbers2.take(100).toList(); // [1, 2, 3, 4, 5, 6, 7]
+  print(result3);
+  print(result4);
+
+
+  /// Chaining .skip() and .take() method together, first skip n elements,
+  // then pick m elements from what's left
+  final numbers3 = [1, 2, 3, 4, 6, 7, 8, 9];
+  final result5 = numbers3.skip(4).take(2).toList(); // [6, 7]
+  print(result5);
 
 
 }
